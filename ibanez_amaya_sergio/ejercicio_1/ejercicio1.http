@@ -1,0 +1,43 @@
+@url=http://localhost:3001
+
+### Listado de rectangulos
+GET {{url}}/rectangulos
+
+### Listado filtrado solo cuadrados
+GET {{url}}/rectangulos?tipo=cuadrado
+
+### Listado filtrado solo rectangulos
+GET {{url}}/rectangulos?tipo=rectangulo
+
+### Detalle de rectangulo con perimetro y superficie
+GET {{url}}/rectangulos/1
+
+### Crear rectangulo
+POST {{url}}/rectangulos
+Content-Type: application/json
+
+{
+  "base": 7,
+  "altura": 7
+}
+
+### Crear con datos invalidos
+POST {{url}}/rectangulos
+Content-Type: application/json
+
+{
+  "base": -2,
+  "altura": 5
+}
+
+### Modificar rectangulo
+PUT {{url}}/rectangulos/2
+Content-Type: application/json
+
+{
+  "base": 8,
+  "altura": 4
+}
+
+### Quitar rectangulo
+DELETE {{url}}/rectangulos/3
