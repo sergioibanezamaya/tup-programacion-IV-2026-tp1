@@ -1,0 +1,64 @@
+@url=http://localhost:3002
+
+### Listado de alumnos con promedio y condicion
+GET {{url}}/alumnos
+
+### Listado filtrado por condicion
+GET {{url}}/alumnos?condicion=promocionado
+
+### Listado filtrado por nombre
+GET {{url}}/alumnos?alumnoNombre=juan
+
+### Condicion invalida en query
+GET {{url}}/alumnos?condicion=regular
+
+### Notas de un alumno con promedio y condicion
+GET {{url}}/alumnos/1
+
+### Crear alumno
+POST {{url}}/alumnos
+Content-Type: application/json
+
+{
+  "nombre": "Ana Garcia",
+  "notas": [8, 8, 7]
+}
+
+### Crear con nombre repetido
+POST {{url}}/alumnos
+Content-Type: application/json
+
+{
+  "nombre": "ana garcia",
+  "notas": [6, 6, 6]
+}
+
+### Crear con notas invalidas
+POST {{url}}/alumnos
+Content-Type: application/json
+
+{
+  "nombre": "Luis Fernandez",
+  "notas": [10, 4]
+}
+
+### Modificar alumno
+PUT {{url}}/alumnos/2
+Content-Type: application/json
+
+{
+  "nombre": "Maria Gomez",
+  "notas": [8, 9, 8]
+}
+
+### Modificar con nombre de otro alumno
+PUT {{url}}/alumnos/2
+Content-Type: application/json
+
+{
+  "nombre": "Juan Perez",
+  "notas": [7, 7, 7]
+}
+
+### Quitar alumno
+DELETE {{url}}/alumnos/3

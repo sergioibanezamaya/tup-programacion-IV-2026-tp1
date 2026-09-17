@@ -1,0 +1,15 @@
+{
+  "name": "ejercicio2",
+  "version": "1.0.0",
+  "description": "API de alumnos y calificaciones",
+  "license": "ISC",
+  "author": "Sergio Ibanez Amaya",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
