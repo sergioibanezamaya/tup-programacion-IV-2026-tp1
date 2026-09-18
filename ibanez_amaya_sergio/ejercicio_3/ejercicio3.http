@@ -1,0 +1,69 @@
+@url=http://localhost:3003
+
+### Listado de tareas
+GET {{url}}/tareas
+
+### Listado de tareas completadas
+GET {{url}}/tareas?estado=completada
+
+### Listado de tareas pendientes
+GET {{url}}/tareas?estado=pendiente
+
+### Estado invalido en query
+GET {{url}}/tareas?estado=terminada
+
+### Detalle de una tarea
+GET {{url}}/tareas/3
+
+### Crear tarea pendiente
+POST {{url}}/tareas
+Content-Type: application/json
+
+{
+  "nombre": "Hacer el ejercicio 3"
+}
+
+### Crear tarea completada
+POST {{url}}/tareas
+Content-Type: application/json
+
+{
+  "nombre": "Crear rama en GitHub",
+  "completada": true
+}
+
+### Crear tarea con nombre repetido
+POST {{url}}/tareas
+Content-Type: application/json
+
+{
+  "nombre": "hacer el ejercicio 3"
+}
+
+### Marcar tarea como completada
+PATCH {{url}}/tareas/3
+Content-Type: application/json
+
+{
+  "completada": true
+}
+
+### Cambiar solo el nombre
+PATCH {{url}}/tareas/4
+Content-Type: application/json
+
+{
+  "nombre": "Hacer el ejercicio 2 completo"
+}
+
+### Modificar tarea completa
+PUT {{url}}/tareas/1
+Content-Type: application/json
+
+{
+  "nombre": "Instalar Node.js",
+  "completada": true
+}
+
+### Quitar tarea
+DELETE {{url}}/tareas/2
